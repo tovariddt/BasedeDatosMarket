@@ -24,21 +24,17 @@ DROP TABLE IF EXISTS `usuario`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
   `idusuario` int NOT NULL AUTO_INCREMENT,
-  `nombreusuario` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nombreusuario` varchar(52) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `correo` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `contrasena` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `idrol` int DEFAULT NULL,
   `idperfil` int DEFAULT NULL,
   `idpersona` int NOT NULL,
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `creadoridusuario` int DEFAULT NULL,
-  `contraseña` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idusuario`),
-  KEY `idrol` (`idrol`),
   KEY `idperfil` (`idperfil`),
   KEY `usuario_ibfk_2_idx` (`idpersona`),
-  CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idrol`) REFERENCES `roles` (`idrol`),
   CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`idperfil`) REFERENCES `perfiles` (`idperfil`),
   CONSTRAINT `usuario_ibfk_3` FOREIGN KEY (`idpersona`) REFERENCES `personas` (`idpersona`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1004 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
@@ -53,4 +49,4 @@ CREATE TABLE `usuario` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22 19:15:16
+-- Dump completed on 2024-05-23 15:13:36

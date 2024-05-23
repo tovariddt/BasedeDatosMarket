@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `codigo_postal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `codigo_postal` (
-  `id_codigo_postal` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `id_codigo_postal` int unsigned NOT NULL AUTO_INCREMENT,
   `clave` char(5) NOT NULL,
   `clave_estado` char(2) NOT NULL,
   `nombre_estado` varchar(150) NOT NULL,
@@ -55,4 +55,4 @@ CREATE TABLE `codigo_postal` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22 19:15:16
+-- Dump completed on 2024-05-23 15:13:35

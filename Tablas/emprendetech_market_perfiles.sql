@@ -29,7 +29,10 @@ CREATE TABLE `perfiles` (
   `creadoridusuario` int DEFAULT NULL,
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`idperfil`)
+  `idrol` int DEFAULT NULL,
+  PRIMARY KEY (`idperfil`),
+  KEY `idrol_idx` (`idrol`),
+  CONSTRAINT `idrol` FOREIGN KEY (`idrol`) REFERENCES `roles` (`idrol`)
 ) ENGINE=InnoDB AUTO_INCREMENT=754 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -42,4 +45,4 @@ CREATE TABLE `perfiles` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22 19:15:16
+-- Dump completed on 2024-05-23 15:13:35

@@ -33,7 +33,7 @@ CREATE TABLE `personas` (
   `creadoridusuario` int DEFAULT NULL,
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_codigo_postal` bigint unsigned NOT NULL,
+  `id_codigo_postal` int unsigned DEFAULT NULL,
   PRIMARY KEY (`idpersona`),
   KEY `id_codigo_postal_idx` (`id_codigo_postal`),
   CONSTRAINT `id_codigo_postal` FOREIGN KEY (`id_codigo_postal`) REFERENCES `codigo_postal` (`id_codigo_postal`)
@@ -49,4 +49,4 @@ CREATE TABLE `personas` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22 19:15:15
+-- Dump completed on 2024-05-23 15:13:35

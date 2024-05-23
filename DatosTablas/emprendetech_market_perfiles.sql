@@ -21,7 +21,7 @@
 
 LOCK TABLES `perfiles` WRITE;
 /*!40000 ALTER TABLE `perfiles` DISABLE KEYS */;
-INSERT INTO `perfiles` VALUES (1,'Administrador','permisos Administrador',1,'2024-04-18 04:16:37','2024-04-18 04:16:03'),(2,'Empleado','permisos Empleado',1,'2024-04-18 04:16:37','2024-04-18 04:16:03'),(3,'Emprendedor','permisos Emprendedor',1,'2024-04-18 04:16:37','2024-04-18 04:16:03'),(4,'Cliente','permisos cliente',1,'2024-04-18 04:16:37','2024-04-18 04:16:03'),(5,'Visitante','permisos visitante',1,'2024-04-18 04:16:37','2024-04-18 04:16:03');
+INSERT INTO `perfiles` VALUES (1,'Administrador','permisos Administrador',1,'2024-04-18 04:16:37','2024-04-18 04:16:03','1'),(2,'Empleado','permisos Empleado',1,'2024-04-18 04:16:37','2024-04-18 04:16:03','1'),(3,'Emprendedor','permisos Emprendedor',1,'2024-04-18 04:16:37','2024-04-18 04:16:03','1'),(4,'Cliente','permisos cliente',1,'2024-04-18 04:16:37','2024-04-18 04:16:03','1'),(5,'Visitante','permisos visitante',1,'2024-04-18 04:16:37','2024-04-18 04:16:03','1');
 /*!40000 ALTER TABLE `perfiles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
