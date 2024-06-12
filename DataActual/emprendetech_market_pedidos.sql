@@ -25,15 +25,18 @@ DROP TABLE IF EXISTS `pedidos`;
 CREATE TABLE `pedidos` (
   `idpedido` int NOT NULL AUTO_INCREMENT,
   `idcliente` int DEFAULT NULL,
-  `fecha_pedido` datetime(6) DEFAULT NULL,
-  `estado` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `idventa` int DEFAULT NULL,
+  `fechapedido` datetime(6) DEFAULT NULL,
+  `estatus` enum('Espera','Finalizado','Canselado') COLLATE utf8_unicode_ci DEFAULT NULL,
   `creadoridusuario` int DEFAULT NULL,
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idpedido`),
   KEY `idcliente` (`idcliente`),
+  KEY `idventa_pedidos_idx` (`idventa`),
+  CONSTRAINT `idventa_pedidos` FOREIGN KEY (`idventa`) REFERENCES `ventas` (`idventa`),
   CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`idcliente`) REFERENCES `clientes` (`idcliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +45,7 @@ CREATE TABLE `pedidos` (
 
 LOCK TABLES `pedidos` WRITE;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+INSERT INTO `pedidos` VALUES (1,1,152,'2024-06-11 21:16:30.526000','Espera',1,'2024-06-12 03:16:31','2024-06-12 03:16:31'),(2,1,153,'2024-06-11 21:17:27.959000','Espera',1,'2024-06-12 03:17:28','2024-06-12 03:17:28');
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-30 11:32:23
+-- Dump completed on 2024-06-11 21:23:36

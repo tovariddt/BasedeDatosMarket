@@ -34,7 +34,7 @@ CREATE TABLE `clientes` (
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idcliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+INSERT INTO `clientes` VALUES (1,'David','Dominguez','Tovar','Colocnia xxx','Casa amarilla','9221763053',1,'2024-06-12 03:16:30','2024-06-12 03:16:30');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-30 11:32:24
+-- Dump completed on 2024-06-11 21:23:37

@@ -24,20 +24,18 @@ DROP TABLE IF EXISTS `ventas`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ventas` (
   `idventa` int NOT NULL AUTO_INCREMENT,
-  `idpedido` int DEFAULT NULL,
   `idmetodospago` int DEFAULT NULL,
   `fechaventa` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `estatus` enum('Pagado','NoPagado') COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tipo` enum('Venta','Pedido') COLLATE utf8_unicode_ci DEFAULT NULL,
   `total` float DEFAULT NULL,
   `creadoridusuario` int DEFAULT NULL,
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `fecha_pedido` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`idventa`),
   KEY `idmetodospago` (`idmetodospago`),
-  KEY `idpedido` (`idpedido`),
-  CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idmetodospago`) REFERENCES `metodospago` (`idmetodospago`),
-  CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`idpedido`) REFERENCES `pedidos` (`idpedido`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+  CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idmetodospago`) REFERENCES `metodospago` (`idmetodospago`)
+) ENGINE=InnoDB AUTO_INCREMENT=154 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +44,7 @@ CREATE TABLE `ventas` (
 
 LOCK TABLES `ventas` WRITE;
 /*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+INSERT INTO `ventas` VALUES (152,1,'2024-06-12 03:16:30','NoPagado','Pedido',NULL,1,'2024-06-12 03:16:30','2024-06-12 03:16:30'),(153,1,'2024-06-12 03:17:28','NoPagado','Pedido',NULL,1,'2024-06-12 03:17:28','2024-06-12 03:17:28');
 /*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-30 11:32:20
+-- Dump completed on 2024-06-11 21:23:36

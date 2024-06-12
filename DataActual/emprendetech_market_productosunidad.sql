@@ -24,8 +24,11 @@ DROP TABLE IF EXISTS `productosunidad`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `productosunidad` (
   `idproductounidad` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `idproducto` int DEFAULT NULL,
   `idmedida` int DEFAULT NULL,
+  `cantidad` int DEFAULT NULL,
+  `precio` float DEFAULT NULL,
   `creadoridusuario` int DEFAULT NULL,
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -34,7 +37,7 @@ CREATE TABLE `productosunidad` (
   KEY `idmedida` (`idmedida`),
   CONSTRAINT `productosunidad_ibfk_1` FOREIGN KEY (`idproducto`) REFERENCES `productos` (`idproducto`),
   CONSTRAINT `productosunidad_ibfk_2` FOREIGN KEY (`idmedida`) REFERENCES `medidas` (`idmedida`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +46,7 @@ CREATE TABLE `productosunidad` (
 
 LOCK TABLES `productosunidad` WRITE;
 /*!40000 ALTER TABLE `productosunidad` DISABLE KEYS */;
+INSERT INTO `productosunidad` VALUES (1,'Cosa-1',1,1,10,20.5,1,'2024-06-08 23:42:21','2024-06-08 23:42:21'),(2,'Cosa-2',2,2,0,40.5,1,'2024-06-08 23:44:10','2024-06-08 23:44:10'),(3,'Cosa-3',3,4,15,30.5,1,'2024-06-08 23:44:46','2024-06-08 23:44:46'),(4,'Cosa-4',3,2,12,20.5,1,'2024-06-08 23:45:31','2024-06-08 23:45:31'),(5,'Cosa-5',2,4,20,45.5,1,'2024-06-08 23:46:01','2024-06-08 23:46:01'),(6,'Cosa-6',1,2,20,55.5,1,'2024-06-08 23:46:29','2024-06-08 23:46:29');
 /*!40000 ALTER TABLE `productosunidad` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-30 11:32:20
+-- Dump completed on 2024-06-11 21:23:35

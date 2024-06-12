@@ -29,8 +29,8 @@ CREATE TABLE `medidas` (
   `creadoridusuario` int DEFAULT NULL,
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `descripcion` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `idpermisos` int NOT NULL,
-  `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idmedida`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +41,7 @@ CREATE TABLE `medidas` (
 
 LOCK TABLES `medidas` WRITE;
 /*!40000 ALTER TABLE `medidas` DISABLE KEYS */;
-INSERT INTO `medidas` VALUES (1,'Kilogramo','kg',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',0,NULL),(2,'Gramo','gr',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',0,NULL),(3,'Kilogramo','kg',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',0,NULL),(4,'pieza','pza',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',0,NULL),(5,'caja','cja',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',0,NULL);
+INSERT INTO `medidas` VALUES (1,'Kilogramo','kg',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',NULL,0),(2,'Gramo','gr',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',NULL,0),(3,'Kilogramo','kg',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',NULL,0),(4,'pieza','pza',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',NULL,0),(5,'caja','cja',1,'2024-04-18 04:16:37','2024-04-18 04:16:03',NULL,0);
 /*!40000 ALTER TABLE `medidas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-30 11:32:22
+-- Dump completed on 2024-06-11 21:23:38

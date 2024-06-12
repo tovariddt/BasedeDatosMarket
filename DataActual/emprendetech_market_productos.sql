@@ -27,7 +27,6 @@ CREATE TABLE `productos` (
   `sku` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `nombre` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `descripcion` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cantidad_disponible` int DEFAULT NULL,
   `imagen` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `idemprendimiento` int DEFAULT NULL,
   `idcategoria` int DEFAULT NULL,
@@ -48,7 +47,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Prodcuto1','Prodcuto1-N','Prodcuto1-N-Des',1,'imagen Prodcuto1',1,1,1,'2024-05-28 01:55:24','2024-05-28 01:55:24'),(2,'Prodcuto2','Prodcuto2-N','Prodcuto2-N-Des',1,'imagen Prodcuto2',1,2,1,'2024-05-28 01:55:54','2024-05-28 01:55:54'),(3,'Prodcuto3','Prodcuto3-N','Prodcuto3-N-Des',3,'imagen Prodcuto3',1,2,1,'2024-05-28 01:56:22','2024-05-28 01:56:22'),(4,'Prodcuto4','Prodcuto4-N','Prodcuto4-N-Des',4,'imagen Prodcuto4',2,2,1,'2024-05-28 01:57:00','2024-05-28 01:57:00'),(5,'Prodcuto5','Prodcuto5-N','Prodcuto5-N-Des',5,'imagen Prodcuto5',2,2,1,'2024-05-28 01:57:13','2024-05-28 01:57:13');
+INSERT INTO `productos` VALUES (1,'Prodcuto1','Prodcuto1-N','Prodcuto1-N-Des','imagen Prodcuto1',1,1,1,'2024-05-28 01:55:24','2024-05-28 01:55:24'),(2,'Prodcuto2','Prodcuto2-N','Prodcuto2-N-Des','imagen Prodcuto2',1,2,1,'2024-05-28 01:55:54','2024-05-28 01:55:54'),(3,'Prodcuto3','Prodcuto3-N','Prodcuto3-N-Des','imagen Prodcuto3',1,2,1,'2024-05-28 01:56:22','2024-05-28 01:56:22'),(4,'Prodcuto4','Prodcuto4-N','Prodcuto4-N-Des','imagen Prodcuto4',2,2,1,'2024-05-28 01:57:00','2024-05-28 01:57:00'),(5,'Prodcuto5','Prodcuto5-N','Prodcuto5-N-Des','imagen Prodcuto5',2,2,1,'2024-05-28 01:57:13','2024-05-28 01:57:13');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-30 11:32:23
+-- Dump completed on 2024-06-11 21:23:37

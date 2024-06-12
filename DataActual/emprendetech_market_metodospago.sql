@@ -25,10 +25,10 @@ DROP TABLE IF EXISTS `metodospago`;
 CREATE TABLE `metodospago` (
   `idmetodospago` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `estatus` tinyint NOT NULL DEFAULT '0',
   `fechacreacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `creadoridusuario` int DEFAULT NULL,
-  `estatus` int DEFAULT NULL,
   PRIMARY KEY (`idmetodospago`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -39,7 +39,7 @@ CREATE TABLE `metodospago` (
 
 LOCK TABLES `metodospago` WRITE;
 /*!40000 ALTER TABLE `metodospago` DISABLE KEYS */;
-INSERT INTO `metodospago` VALUES (1,'Efectivo','2024-04-11 05:14:17','2024-04-11 05:14:17',1,1),(2,'Tarjeta de crédito','2024-04-11 05:14:17','2024-04-11 05:14:17',1,0),(3,'Transferencia bancaria','2024-04-11 05:14:17','2024-04-11 05:14:17',1,0);
+INSERT INTO `metodospago` VALUES (1,'Efectivo',1,'2024-04-11 05:14:17','2024-04-11 05:14:17',1),(2,'Tarjeta de crédito',0,'2024-04-11 05:14:17','2024-04-11 05:14:17',1),(3,'Transferencia bancaria',0,'2024-04-11 05:14:17','2024-04-11 05:14:17',1);
 /*!40000 ALTER TABLE `metodospago` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-30 11:32:24
+-- Dump completed on 2024-06-11 21:23:37
